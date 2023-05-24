@@ -1,0 +1,112 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Price",
+      "description": "Operaciones sobre los precios de los productos de un determinado grupo "
+    }
+  ],
+  "paths": {
+    "/api/price/v0/product-price": {
+      "get": {
+        "tags": [
+          "Price"
+        ],
+        "summary": "Obtiene el precio de un producto para una fecha determinada",
+        "operationId": "getProductPrice",
+        "parameters": [
+          {
+            "name": "brandId",
+            "in": "query",
+            "description": "Foreign key de la cadena del grupo (1 = ZARA)",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 1
+          },
+          {
+            "name": "applicationDate",
+            "in": "query",
+            "description": "Fecha de aplicación para el cálculo del precio del producto",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "example": "2020-06-15T23:59:59+01:00"
+          },
+          {
+            "name": "productId",
+            "in": "query",
+            "description": "Identificador del producto",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 35455
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseProductPriceDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResponseProductPriceDto": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "brandId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pvp": {
+            "type": "number"
+          },
+          "curr": {
+            "type": "string"
+          },
+          "priceList": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

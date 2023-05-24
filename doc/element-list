@@ -1,0 +1,15 @@
+com.inditex.test.prices.application
+com.inditex.test.prices.domain
+com.inditex.test.prices.domain.businessrules
+com.inditex.test.prices.domain.exception
+com.inditex.test.prices.infrastructure.config.spring
+com.inditex.test.prices.infrastructure.inputadapter.rest.dto
+com.inditex.test.prices.infrastructure.inputadapter.rest.error
+com.inditex.test.prices.infrastructure.inputadapter.rest.mapper
+com.inditex.test.prices.infrastructure.inputadapter.rest.resources
+com.inditex.test.prices.infrastructure.inputport
+com.inditex.test.prices.infrastructure.outputadapter.db.springdata.config
+com.inditex.test.prices.infrastructure.outputadapter.db.springdata.dbo
+com.inditex.test.prices.infrastructure.outputadapter.db.springdata.mapper
+com.inditex.test.prices.infrastructure.outputadapter.db.springdata.repository
+com.inditex.test.prices.infrastructure.outputport
