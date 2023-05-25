@@ -55,8 +55,7 @@ public class BusinessRules {
 		logger.debug("Filtrando la lista de precios de producto por la fecha de aplicación.");
 		// Verificamos si existen precios para la fecha de aplicación indicada.
 		List<Price> pricesByApplicationDate = productPricesByBrandId.stream().filter(
-				price -> price.getStartDate().isBefore(applicationDate) && price.getEndDate().isAfter(applicationDate))
-				.sorted(Comparator.comparingInt(Price::getPriority).reversed()).toList();
+				price -> price.getStartDate().isBefore(applicationDate) && price.getEndDate().isAfter(applicationDate)).toList();
 		if (pricesByApplicationDate.isEmpty())
 			throw new PriceException("No existen precios definidos para la fecha de aplicación indicada.");
 
